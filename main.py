@@ -6,15 +6,14 @@ import requests
 # import os 
 # Token=os.environ['TOKEN']
 
-Token=settings.TOKEN
+Token="6404865942:AAGB1ZoHP8q2AET6zT5E6ex1yAYMU3GeoXs"
 
 def start(update:Update,context:CallbackContext):
-    update.message.reply_text("Salom men wikipedidadan qidiruvchi botman.Meni ishlatish uchun /search komandasini yuboring.")
-    context.bot.send_message(chat_id=update.message.chat_id,text="Salom yana bir bor qidirmqochi bo'lgan matningizni /search Amir Temur ko'rinishida qidirishingiz mumkin.")
+    update.message.reply_text("Salom men wikipedidadan qidiruvchi botman.Meni ishlatish uchun /search komandasini yuboring.Misol uchun /search python.")
 def search(update:Update,context:CallbackContext):
     args = context.args
     if len(args) == 0:
-        update.message.reply_text("Please enter a search query.")
+        update.message.reply_text("Iltimos yuqoridagi shakldagi kabi yuboring.")
     else:
         search_text = " ".join(args)
         response = requests.get('https://uz.wikipedia.org/w/api.php', {
